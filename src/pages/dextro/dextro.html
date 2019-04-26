@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar color="vitb12">
+    <ion-title >Dextro Diabetes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-item>
+			<ion-label stacked floating><h2>Nome:</h2></ion-label>
+			<ion-input type="text" #nome></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label stacked floating><h2>Glicemia:</h2></ion-label>
+			<ion-input type="number" #gli></ion-input>
+	</ion-item><br>
+
+	<button ion-button block large (click)="glicemia()" color="vitb12">Calcular</button><br>
+
+	<!-- Glicemia Normal em jejum -->
+	<h3 *ngIf="jejum1 && gli1>=70 && gli1<=130" text-center>NORMAL</h3>
+	<h6 *ngIf="jejum1 && gli1>=70 && gli1<=130">Sua glicemia está normal {{name}}, clique no botão abaixo para se informar mais sobre a sua saúde!<ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>=70 && gli1<=130" icon-start>
+				Veja aqui
+			</button>
+
+	<h3 *ngIf="jejum1 && gli1>130" text-center>ELEVADA</h3>
+	<h6 *ngIf="jejum1 && gli1>130">Fique atento(a) {{name}}, sua glicemia está elevada. Clique abaixo para saber quais alimentos evitar<ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>130" icon-start>
+				Veja aqui
+			</button>
+
+
+	<h3 *ngIf="!jejum1 && gli1<180" text-center>NORMAL</h3>
+	<h6 *ngIf="!jejum1 && gli1<180">Sua glicemia está normal {{name}}, clique no botão abaixo para se informar mais sobre a sua saúde! <ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1<180" icon-start>
+				Veja aqui
+	</button>
+	<h3 *ngIf="!jejum1 && gli1>=180" text-center>ELEVADA</h3>
+	<h6 *ngIf="!jejum1 && gli1>=180">Fique atento(a) {{name}}, sua glicemia está elevada. Clique abaixo para saber quais alimentos evitar <ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1>=180" icon-start>
+				Veja aqui
+	</button>
+<img src="assets/imgs/dextro.jpg" *ngIf="gli1 > 0">
+
+	<h6 text-justify>**Os valores da glicemia capilar periférica (DEXTRO) são computados somente para controle de pacientes diabéticos.</h6>
+	
+	<p text-center> Fonte: Diretrizes 2017/2018 da sociedade brasileira de diabetes</p>
+</ion-content>

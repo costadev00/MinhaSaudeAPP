@@ -1,0 +1,22 @@
+page-fundadores {
+
+.botao
+{
+	border-radius:30px !important;
+}
+.bemvindo{
+	max-width:auto;
+    max-height:65px;
+}
+ion-content .scroll-content {
+        background-image: url(../../assets/imgs/empresa.png);
+        background-size: cover;
+		background-position: center;
+		opacity: inherit;
+	}
+	.item {
+	border-color: rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0);
+	color: white; 
+}
+}

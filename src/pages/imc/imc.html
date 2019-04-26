@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="imccolor">
+    <ion-title>
+      IMC
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-item>
+		<ion-label stacked floating><h2>Nome:</h2></ion-label>
+			<ion-input type="name" #nome></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label stacked floating><h2>Peso (Kg):</h2> </ion-label>
+			<ion-input type="number" #peso></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label stacked floating ><h2>Altura:</h2></ion-label>
+			<ion-input type="number"  #altura></ion-input>
+	</ion-item><br>
+
+	<button ion-button block large (click)="calcular()" color="imccolor">Calcular</button>
+
+	<h3 text-center *ngIf="resultado<18.5" >BAIXO PESO</h3>
+	<h5 text-center *ngIf="resultado<18.5" class="baixo">ABAIXO DO PESO</h5>
+
+	<h3 text-center *ngIf="resultado>=18.5 && resultado<=25.0" class="ideal">PESO IDEAL</h3>
+
+	<h3 text-center *ngIf="resultado>25.0 && resultado<=30.0">POUCO ELEVADO</h3>
+	<h5 text-center *ngIf="resultado>25.0 && resultado<=30.0" class="pelv">SOBREPESO</h5>
+
+	<h3 text-center *ngIf="resultado>30.0 && resultado<=35.0">ELEVADO</h3>
+	<h5 text-center *ngIf="resultado>30.0 && resultado<=35.0" class="elv">OBESIDADE GRAU 1</h5>
+
+	<h3 text-center *ngIf="resultado>35.0 && resultado<=39.9">MUITO ELEVADO</h3>
+	<h5 text-center *ngIf="resultado>35.0 && resultado<=39.9" class="mtelv">OBESIDADE GRAU 2</h5>
+
+	<h3 text-center *ngIf="resultado>39.9 ">MUITÍSSIMO ELEVADO</h3>
+	<h5 text-center *ngIf="resultado>39.9 " class="mtselv">OBESIDADE GRAU 3</h5> 
+
+	<h4 text-center *ngIf="resultado" > Seu IMC é {{resultado}}, {{name}}</h4>
+
+	<h6 *ngIf="resultado">Saiba mais sobre como cuidar melhor de sua saúde! Clicando no botão abaixo. <ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="imccolor" (click)="glicemiared()" *ngIf="resultado > 0" icon-start>
+				Veja aqui
+			</button><br><br>
+		<img src="assets/imgs/imctable.png" *ngIf="resultado > 0">
+</ion-content>

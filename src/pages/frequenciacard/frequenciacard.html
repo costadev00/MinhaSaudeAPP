@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="freqcardcolor">
+    <ion-title>Frequência Cardíaca</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+		<ion-item>
+		<ion-label stacked floating><h2>Nome:</h2></ion-label>
+			<ion-input type="name" #nome></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label stacked floating><h2>Batimentos por minuto:</h2> </ion-label>
+			<ion-input type="number" #freqcard></ion-input>
+	</ion-item><br>
+	<button ion-button block (click)="calcularfreqcard()" color="freqcardcolor" large>Calcular</button><br>
+	<h3 text-center *ngIf="resultado<60">BRADICARDIA</h3>
+
+	<h3 text-center *ngIf="resultado>=60 && resultado<=100">NORMAL</h3>
+
+
+	<h3 text-center *ngIf="resultado>100">TAQUICARDIA</h3>
+
+
+	<h6 *ngIf="resultado">Clique no botão abaixo para se informar mais sobre a sua saúde {{name}}! <ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="freqcardcolor" (click)="AlimentosPage()" *ngIf="resultado" icon-start>Veja aqui</button>
+	<h6>**ATENÇÃO! São considerados valores para pessoas adultas, em estado de repouso.</h6>
+	<img src="assets/imgs/freqr.jpg" *ngIf="resultado > 0">
+</ion-content>

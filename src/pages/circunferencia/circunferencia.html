@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="circcolor">
+    <ion-title>
+      Circunferência Abdominal
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+		<ion-item>
+		<ion-label stacked floating><h2>Nome:</h2></ion-label>
+			<ion-input type="name" #nome></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label stacked floating><h2>Circunferência (cm):</h2> </ion-label>
+			<ion-input type="number" #circ></ion-input>
+	</ion-item><br>
+
+	<button ion-button block large (click)="circfunc()" color="circcolor">Calcular</button>
+
+
+	<h3 text-center *ngIf="masc1 && circ1<=102">NORMAL</h3>
+
+	<h6 *ngIf="masc1 && circ1<=102">Saiba mais sobre como cuidar melhor de sua saúde! Clicando no botão abaixo. <ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="circcolor" (click)="AlimentosPage()" *ngIf="masc1 && circ1<=102" icon-start>Veja aqui</button>
+
+
+	<h3 text-center *ngIf="masc1 && circ1>102">ELEVADO</h3>
+
+	<h6 *ngIf="masc1 && circ1>102">Saiba mais como reduzir a sua circunferência abdominal! Clicando no botão abaixo. <ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="circcolor" (click)="AlimentosPage()" *ngIf="masc1 && circ1>102" icon-start>Veja aqui</button>
+
+	<h3 text-center *ngIf="!masc1 && circ1<=88">NORMAL</h3>
+
+	<h6 *ngIf="!masc1 && circ1<=88">Saiba mais sobre como cuidar melhor de sua saúde! Clicando no botão abaixo.<ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="circcolor" (click)="AlimentosPage()" *ngIf="!masc1 && circ1<=88" icon-start>Veja aqui</button>
+
+	<h3 text-center *ngIf="!masc1 && circ1>88">ELEVADO</h3>
+
+	<h6 *ngIf="!masc1 && circ1>88">Saiba mais como reduzir a sua circunferência abdominal! Clicando no botão abaixo.<ion-icon name="ios-happy-outline"></ion-icon></h6>
+
+	<button text-center ion-button medium color="circcolor" (click)="AlimentosPage()" *ngIf="!masc1 && circ1>88" icon-start>Veja aqui</button>
+		<img src="assets/imgs/circ.png" *ngIf="circ1 > 0">
+</ion-content>
