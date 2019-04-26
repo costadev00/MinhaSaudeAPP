@@ -11,10 +11,10 @@ export class PressaoPage {
  	@ViewChild('pres1') pres1;
 	@ViewChild('pres2') pres2;
 	@ViewChild('nome') nome;
-	normal: boolean;
-	pre: boolean;
-	resultado1 : string;
-	resultado2 : string;
+	// normal: boolean;
+	// pre: boolean;
+	// resultado1 : string;
+	// resultado2 : string;
 	resultado: string;
 	name : string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {

@@ -5,6 +5,9 @@ import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { IntroPage } from '../pages/intro/intro';
+import { HomePage } from './../pages/home/home';
+import { NutrientesPage } from './../pages/nutrientes/nutrientes';
+import { FundadoresPage } from './../pages/fundadores/fundadores';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,10 +17,13 @@ import { IonicStorageModule } from '@ionic/storage';
   declarations: [
     MyApp,
     TabsPage,
-    IntroPage
+    IntroPage,
+    HomePage,
+    NutrientesPage,
+    FundadoresPage
   ],
   imports: [
-    BrowserModule,
+BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -25,7 +31,10 @@ import { IonicStorageModule } from '@ionic/storage';
   entryComponents: [
     MyApp,
     TabsPage,
-    IntroPage
+    IntroPage,
+    HomePage,
+    NutrientesPage,
+    FundadoresPage
   ],
   providers: [
     StatusBar,
