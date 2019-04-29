@@ -18,13 +18,13 @@
 		<ion-label stacked floating><h2>Hemoglobina Glicada:</h2></ion-label>
 			<ion-input type="number" #hemo></ion-input>
 	</ion-item>
-	<button ion-button block large (click)="hemoglobina()" color="vitb1">Calcular</button><br>
+	<button class="border" ion-button block large (click)="hemoglobina()" color="vitb1">Calcular</button><br>
 
 	<!-- Hemoglobina Normal -->
 	<h3 *ngIf="hemo1<5.7" text-center>NORMAL</h3>
 	<h6 *ngIf="hemo1<5.7"> Sua glicemia está normal {{name}}, clique no botão abaixo para se informar mais sobre a sua saúde! <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="vitb1" (click)="AlimentosPage()" *ngIf="jejum1 && gli1 <100" icon-start>
+	<button class="border" text-center ion-button medium color="vitb1" (click)="AlimentosPage()" *ngIf="jejum1 && gli1 <100" icon-start>
 				Veja aqui
 			</button>
 
@@ -32,7 +32,7 @@
 	<h3 *ngIf="hemo1>=5.7 && hemo1<=6.4" text-center>PRÉ-DIABETES</h3>
 	<h6 *ngIf="hemo1>=5.7 && hemo1<=6.4">Cuidado você pode estar com pré diabetes {{name}}, clique no botão abaixo para saber quais alimentos evitar! <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="vitb1" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>=100 && gli1<=126" icon-start>
+	<button class="border" text-center ion-button medium color="vitb1" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>=100 && gli1<=126" icon-start>
 				Veja aqui
 	</button>
 
@@ -40,7 +40,7 @@
 	<h3 *ngIf="hemo1>=6.5" text-center>DIABETES</h3>
 		<h6 *ngIf="hemo1>=6.5"> ATENÇÃO! Você pode estar com diabetes {{name}}, clique no botão abaixo para saber quais alimentos evitar <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="vitb1" (click)="AlimentosPage()" *ngIf="hemo1>=6.5" icon-start>
+	<button class="border" text-center ion-button medium color="vitb1" (click)="AlimentosPage()" *ngIf="hemo1>=6.5" icon-start>
 				Veja aqui
 	</button>
 

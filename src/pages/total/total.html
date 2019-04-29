@@ -15,24 +15,24 @@
 		<ion-label stacked floating><h2>Colesterol Total (mg/dL):</h2> </ion-label>
 			<ion-input type="number" #total></ion-input>
 	</ion-item><br>
-	<button ion-button block (click)="CalcularTotal()" color="total" large>Calcular</button><br>
+	<button class="border" ion-button block (click)="CalcularTotal()" color="total" large>Calcular</button><br>
 
 	<h3 text-center *ngIf="resultado<200">NORMAL</h3>
 
 <h6 *ngIf="resultado<200">Clique no botão abaixo para se informar mais sobre a sua saúde, {{name}}! <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-<button text-center ion-button medium color="total" (click)="AlimentosPage()" *ngIf="resultado<200" icon-start>Veja aqui</button>
+<button class="border" text-center ion-button medium color="total" (click)="AlimentosPage()" *ngIf="resultado<200" icon-start>Veja aqui</button>
 
 	<h3 text-center *ngIf="resultado>=200 && resultado<=239">LIMÍTROFE</h3>
 
 	<h6 *ngIf="resultado>=200 && resultado<=239">Seu colesterol total pode estar limítrofe. Clique no botão abaixo para saber quais alimentos você deve consumir, {{name}}!<ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-<button text-center ion-button medium color="total" (click)="AlimentosPage()" *ngIf="resultado>=200 && resultado<=239" icon-start>Veja aqui</button>
+<button class="border" text-center ion-button medium color="total" (click)="AlimentosPage()" *ngIf="resultado>=200 && resultado<=239" icon-start>Veja aqui</button>
 
 	<h3 text-center *ngIf="resultado>=240">ELEVADO</h3>
 
 	<h6 *ngIf="resultado>=240">Seu colesterol total pode estar elevado. Clique no botão abaixo para saber quais alimentos evitar {{name}}! <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-<button text-center ion-button medium color="total" (click)="AlimentosPage()" *ngIf="resultado>=240" icon-start>Veja aqui</button>
+<button class="border" text-center ion-button medium color="total" (click)="AlimentosPage()" *ngIf="resultado>=240" icon-start>Veja aqui</button>
 <img src="assets/imgs/colesterol.jpg" *ngIf="resultado > 0">
 </ion-content>

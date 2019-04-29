@@ -15,14 +15,14 @@
 		<ion-label stacked floating><h2>Triglicerídeos(mg/dL):</h2> </ion-label>
 			<ion-input type="number" #total></ion-input>
 	</ion-item><br>
-	<button ion-button block (click)="CalcularTotalTRI()" color="vitc" large>Calcular</button><br>
+	<button  class="border"ion-button block (click)="CalcularTotalTRI()" color="vitc" large>Calcular</button><br>
 
 	<h3 text-center *ngIf="resultado<150">DESEJÁVEL</h3>
 	<h3 text-center *ngIf="resultado>=150 && resultado<=200">LIMÍTROFE</h3>
 	<h3 text-center *ngIf="resultado>200">ALTO</h3>
 	
 		<h6 *ngIf="resultado">Clique no botão abaixo para se informar mais sobre a sua saúde {{name}}! <ion-icon name="ios-happy-outline"></ion-icon></h6>
-<button text-center ion-button medium color="vitc" (click)="AlimentosPage()" *ngIf="resultado" icon-start>
+<button class="border" text-center ion-button medium color="vitc" (click)="AlimentosPage()" *ngIf="resultado" icon-start>
 				Veja aqui
 			</button>
 		<img src="assets/imgs/colesterol.jpg" *ngIf="resultado > 0">
