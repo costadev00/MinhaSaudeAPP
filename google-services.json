@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "207875575713",
+    "firebase_url": "https://ionic-exemplo-c7cef.firebaseio.com",
+    "project_id": "ionic-exemplo-c7cef",
+    "storage_bucket": "ionic-exemplo-c7cef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207875575713:android:b03091dca5ee2e24",
+        "android_client_info": {
+          "package_name": "br.com.minha.saude.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207875575713-qpdhn71i758epprg3bm7sq3il28h6ci4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm3UHD6VIwEZ84ZP0W7ZjO6ep8Wq8sPO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207875575713-qpdhn71i758epprg3bm7sq3il28h6ci4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
