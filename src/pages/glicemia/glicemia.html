@@ -17,13 +17,13 @@
 			<ion-input type="number" #gli></ion-input>
 	</ion-item><br>
 
-	<button ion-button block large (click)="glicemia()" color="glicolor">Calcular</button><br>
+	<button class="border" ion-button block large (click)="glicemia()" color="glicolor">Calcular</button><br>
 
 	<!-- Glicemia Normal em jejum -->
 	<h3 *ngIf="jejum1 && gli1 <100" text-center>NORMAL</h3>
 	<h6 *ngIf="jejum1 && gli1 <100"> Sua glicemia está normal {{name}}, clique no botão abaixo para se informar mais sobre a sua saúde! <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="jejum1 && gli1 <100" icon-start>
+	<button class="border" text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="jejum1 && gli1 <100" icon-start>
 				Veja aqui
 			</button>
 
@@ -31,7 +31,7 @@
 	<h3 *ngIf="jejum1 && gli1>=100 && gli1<126" text-center>PRÉ-DIABETES</h3>
 	<h6 *ngIf="jejum1 && gli1>=100 && gli1<126">Cuidado você pode estar com pré diabetes {{name}}, clique no botão abaixo para saber quais alimentos evitar! <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>=100 && gli1<=126" icon-start>
+	<button class="border" text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>=100 && gli1<=126" icon-start>
 				Veja aqui
 	</button>
 
@@ -39,7 +39,7 @@
 	<h3 *ngIf="jejum1 && gli1>=126" text-center>DIABETES</h3>
 		<h6 *ngIf="jejum1 && gli1>=126"> ATENÇÃO! Você pode estar com diabetes {{name}}, clique no botão abaixo para saber quais alimentos evitar.<ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>126" icon-start>
+	<button class="border" text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>126" icon-start>
 				Veja aqui
 	</button>
 
@@ -47,7 +47,7 @@
 	<h3 *ngIf="!jejum1 && gli1<140" text-center>NORMAL</h3>
 	<h6 *ngIf="!jejum1 && gli1<140">Sua glicemia está normal {{name}}, clique no botão abaixo para se informar mais sobre a sua saúde! <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1<140" icon-start>
+	<button class="border" text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1<140" icon-start>
 				Veja aqui
 	</button>
 
@@ -55,7 +55,7 @@
 	<h3 *ngIf="!jejum1 && gli1>=140 && gli1<200" text-center>PRÉ-DIABETES</h3>
 	<h6 *ngIf="!jejum1 && gli1>=140 && gli1<200">Cuidado você pode estar com pré diabetes {{name}}, clique no botão abaixo para saber quais alimentos evitar! <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1>=140 && gli1<200" icon-start>
+	<button class="border" text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1>=140 && gli1<200" icon-start>
 				Veja aqui
 	</button>
 
@@ -63,12 +63,12 @@
 	<h3 *ngIf="!jejum1 && gli1>=200" text-center>DIABETES</h3>
 	<h6 *ngIf="!jejum1 && gli1>=200">ATENÇÃO! Você pode estar com diabetes {{name}}, clique no botão abaixo para saber quais alimentos evitar <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1>=200" icon-start>
+	<button class="border"text-center ion-button medium color="glicolor" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1>=200" icon-start>
 				Veja aqui
 	</button>
 	<img src="assets/imgs/glicemia.jpg" *ngIf="gli1 > 0">
 	<p text-center>Fonte: Diretrizes 2017/2018 da sociedade brasileira de diabetes</p>
-	<button  text-center ion-button large color="vitb12" (click)="DextroPage()"icon-left>
+	<button  class="border" text-center ion-button large color="vitb12" (click)="DextroPage()"icon-left>
 				Dextro
 			</button>
 
@@ -76,7 +76,7 @@
 concentração de glicose nos vasos capilares da polpa digital.</h5>
 			<img src="assets/imgs/dextro.png"><br><br>
 
-				<button text-center ion-button large color="vitb1" (click)="HemoPage()"icon-right>
+				<button class="border" text-center ion-button large color="vitb1" (click)="HemoPage()"icon-right>
 				Hemoglobina Glicada	
 			</button>
 			<h5 text-justify> Hemoglobina Glicada, também abreviada como Hb A1c, é uma forma de hemoglobina presente naturalmente nos eritrócitos humanos que é útil na identificação de altos níveis de glicemia durante períodos prolongados. Este tipo de hemoglobina é formada a partir de reações não enzimáticas entre a hemoglobina e a glicose.</h5>

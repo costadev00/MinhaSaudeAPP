@@ -18,20 +18,20 @@
 			<ion-input type="number" #gli></ion-input>
 	</ion-item><br>
 
-	<button ion-button block large (click)="glicemia()" color="vitb12">Calcular</button><br>
+	<button class="border" ion-button block large (click)="glicemia()" color="vitb12">Calcular</button><br>
 
 	<!-- Glicemia Normal em jejum -->
 	<h3 *ngIf="jejum1 && gli1>=70 && gli1<=130" text-center>NORMAL</h3>
 	<h6 *ngIf="jejum1 && gli1>=70 && gli1<=130">Sua glicemia está normal {{name}}, clique no botão abaixo para se informar mais sobre a sua saúde!<ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>=70 && gli1<=130" icon-start>
+	<button class="border"  text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>=70 && gli1<=130" icon-start>
 				Veja aqui
 			</button>
 
 	<h3 *ngIf="jejum1 && gli1>130" text-center>ELEVADA</h3>
 	<h6 *ngIf="jejum1 && gli1>130">Fique atento(a) {{name}}, sua glicemia está elevada. Clique abaixo para saber quais alimentos evitar<ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>130" icon-start>
+	<button class="border" text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="jejum1 && gli1>130" icon-start>
 				Veja aqui
 			</button>
 
@@ -39,13 +39,13 @@
 	<h3 *ngIf="!jejum1 && gli1<180" text-center>NORMAL</h3>
 	<h6 *ngIf="!jejum1 && gli1<180">Sua glicemia está normal {{name}}, clique no botão abaixo para se informar mais sobre a sua saúde! <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1<180" icon-start>
+	<button class="border"  text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1<180" icon-start>
 				Veja aqui
 	</button>
 	<h3 *ngIf="!jejum1 && gli1>=180" text-center>ELEVADA</h3>
 	<h6 *ngIf="!jejum1 && gli1>=180">Fique atento(a) {{name}}, sua glicemia está elevada. Clique abaixo para saber quais alimentos evitar <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1>=180" icon-start>
+	<button class="border" text-center ion-button medium color="vitb12" (click)="AlimentosPage()" *ngIf="!jejum1 && gli1>=180" icon-start>
 				Veja aqui
 	</button>
 <img src="assets/imgs/dextro.jpg" *ngIf="gli1 > 0">

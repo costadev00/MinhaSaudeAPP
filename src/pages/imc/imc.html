@@ -11,7 +11,7 @@
 			<ion-input type="name" #nome></ion-input>
 	</ion-item>
 	<ion-item>
-		<ion-label stacked floating><h2>Peso (Kg):</h2> </ion-label>
+		<ion-label stacked floating><h2>Peso (Kg):</h2> </ion-label> 
 			<ion-input type="number" #peso></ion-input>
 	</ion-item>
 
@@ -20,7 +20,7 @@
 			<ion-input type="number"  #altura></ion-input>
 	</ion-item><br>
 
-	<button ion-button block large (click)="calcular()" color="imccolor">Calcular</button>
+	<button class="border" ion-button block large (click)="calcular()" color="imccolor">Calcular</button>
 
 	<h3 text-center *ngIf="resultado<18.5" >BAIXO PESO</h3>
 	<h5 text-center *ngIf="resultado<18.5" class="baixo">ABAIXO DO PESO</h5>
@@ -43,8 +43,8 @@
 
 	<h6 *ngIf="resultado">Saiba mais sobre como cuidar melhor de sua saúde! Clicando no botão abaixo. <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button text-center ion-button medium color="imccolor" (click)="glicemiared()" *ngIf="resultado > 0" icon-start>
+	<button class="border" text-center ion-button medium color="imccolor" (click)="glicemiared()" *ngIf="resultado > 0" icon-start>
 				Veja aqui
 			</button><br><br>
-		<img src="assets/imgs/imctable.png" *ngIf="resultado > 0">
+		<img src="assets/imgs/imctable.png" *ngIf="resultado != null">
 </ion-content>

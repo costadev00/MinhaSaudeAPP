@@ -11,26 +11,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    TabsPage,
-    IntroPage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    TabsPage,
-    IntroPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+	declarations: [ MyApp, TabsPage, IntroPage ],
+	imports: [ BrowserModule, IonicModule.forRoot(MyApp), IonicStorageModule.forRoot() ],
+	bootstrap: [ IonicApp ],
+	entryComponents: [ MyApp, TabsPage, IntroPage ],
+	providers: [ StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler } ]
 })
 export class AppModule {}
