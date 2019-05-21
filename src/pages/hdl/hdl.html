@@ -13,9 +13,9 @@
 	</ion-item>
 	<ion-item>
 		<ion-label stacked floating><h2>Colesterol HDL (mg/dL):</h2> </ion-label>
-			<ion-input type="number" #total></ion-input>
+			<ion-input [(ngModel)]="isInputing" type="number" #total></ion-input>
 	</ion-item><br>
-	<button class="border" ion-button block (click)="CalcularTotalHDL()" color="hdl" large>Calcular</button><br>
+	<button class="border" [disabled]="isInputing === ''" ion-button block (click)="CalcularTotalHDL()" color="hdl" large>Calcular</button><br>
 
 	<h3 text-center *ngIf="resultado>=60">PROTETOR</h3>
 	<h3 text-center *ngIf="resultado>=40 && resultado<=59">NORMAL</h3>

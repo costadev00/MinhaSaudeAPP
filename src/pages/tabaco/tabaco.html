@@ -20,14 +20,14 @@
 
 		<ion-item>
 		<ion-label stacked floating><h2>Tempo de uso do tabaco (em anos):</h2></ion-label>
-		<ion-input type="number" #tempo></ion-input>
+		<ion-input [(ngModel)]="isInputing" type="number" #tempo></ion-input>
 	</ion-item>
-		<button class="border" ion-button block large (click)="calcular()" color="tabacocolor">Calcular</button>
+		<button class="border" [disabled]="isInputing == ''" ion-button block large (click)="calcular()" color="tabacocolor">Calcular</button>
 		<h4 *ngIf="resultado>0">Sua carga tabágica é de {{resultado}} anos-maço, {{name}}</h4>
 
 	<h6 *ngIf="resultado>02">Saiba mais sobre como cuidar melhor de sua saúde clicando no botão abaixo. <ion-icon name="ios-happy-outline"></ion-icon></h6>
 
-	<button  class="border"text-center ion-button medium color="tabacocolor" (click)="AlimentosPage()" *ngIf="resultado>0" icon-start>
+	<button  class="border" text-center ion-button medium color="tabacocolor" (click)="AlimentosPage()" *ngIf="resultado>0" icon-start>
 				Veja aqui
 			</button>
 </ion-content>

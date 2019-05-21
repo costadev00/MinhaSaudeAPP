@@ -13,10 +13,10 @@
 	</ion-item>
 	<ion-item>
 		<ion-label stacked floating><h2>Circunferência (cm):</h2> </ion-label>
-			<ion-input type="number" #circ></ion-input>
+			<ion-input [(ngModel)]="isInputing" type="number" #circ></ion-input>
 	</ion-item><br>
 
-	<button class="border" ion-button block large (click)="circfunc()" color="circcolor">Calcular</button>
+	<button class="border" [disabled]="isInputing == ''" ion-button block large (click)="circfunc()" color="circcolor">Calcular</button>
 
 
 	<h3 text-center *ngIf="masc1 && circ1<=102">NORMAL</h3>

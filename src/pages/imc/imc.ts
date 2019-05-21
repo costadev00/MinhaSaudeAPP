@@ -12,22 +12,25 @@ export class ImcPage {
 	@ViewChild('nome') nome;
 	resultado: string;
 	name: string;
+	isInputingPeso = '';
+	isInputingAltura = '';
 
 	constructor(public navCtrl: NavController, public toastCtrl: ToastController) {}
 
 	calcular() {
-		var toast = this.toastCtrl.create({
+		const toast = this.toastCtrl.create({
 			duration: 7000,
 			showCloseButton: true,
 			closeButtonText: 'OK',
 			position: 'bottom'
 		});
-
-		var peso = this.peso.value;
-		var altura = this.altura.value;
-		var imc = peso / (altura * altura);
+		let peso = this.peso.value;
+		let altura = this.altura.value;
+		let imc = peso / (altura * altura);
 		this.resultado = imc.toFixed(2);
 		this.name = this.nome.value;
+		this.isInputingPeso = this.peso.value;
+		this.isInputingAltura = this.altura.value;
 
 		if (imc < 18.5) {
 			toast.setMessage('Você está com baixo peso' + ', ' + this.nome.value);

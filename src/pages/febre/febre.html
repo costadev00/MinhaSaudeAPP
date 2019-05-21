@@ -14,9 +14,10 @@
 	</ion-item>
 	<ion-item>
 		<ion-label stacked floating><h2>Temperatura (°C):</h2> </ion-label>
-			<ion-input type="number" #febre></ion-input>
+			<ion-input [(ngModel)]="isInputing" type="number" #febre></ion-input>
 	</ion-item><br>
-	<button ion-button block (click)="CalcularFebre()" color="vitc" large>Calcular</button><br>
+	<button class="border" [disabled]="isInputing == ''" ion-button block (click)="CalcularFebre()" color="vitc" large>Calcular</button><br>
+
 
 <h3 text-center *ngIf="resultado<=35">BAIXA</h3>
 	<h3 text-center *ngIf="resultado>=36.5 && resultado<=37.6">LEVE</h3>

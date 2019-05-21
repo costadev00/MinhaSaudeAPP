@@ -14,9 +14,9 @@
 	</ion-item>
 	<ion-item>
 		<ion-label stacked floating><h2>Batimentos por minuto:</h2> </ion-label>
-			<ion-input type="number" #freqcard></ion-input>
+			<ion-input [(ngModel)]="isInputing" type="number" #freqcard></ion-input>
 	</ion-item><br>
-	<button class="border" ion-button block (click)="calcularfreqcard()" color="freqcardcolor" large>Calcular</button><br>
+	<button class="border" [disabled]="isInputing == ''" ion-button block (click)="calcularfreqcard()" color="freqcardcolor" large>Calcular</button><br>
 	<h3 text-center *ngIf="resultado<60">BRADICARDIA</h3>
 
 	<h3 text-center *ngIf="resultado>=60 && resultado<=100">NORMAL</h3>

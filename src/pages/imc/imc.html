@@ -12,15 +12,15 @@
 	</ion-item>
 	<ion-item>
 		<ion-label stacked floating><h2>Peso (Kg):</h2> </ion-label> 
-			<ion-input type="number" #peso></ion-input>
+			<ion-input [(ngModel)]="isInputingPeso" type="number" #peso></ion-input>
 	</ion-item>
 
 	<ion-item>
 		<ion-label stacked floating ><h2>Altura:</h2></ion-label>
-			<ion-input type="number"  #altura></ion-input>
+			<ion-input  [(ngModel)]="isInputingAltura" type="number" #altura></ion-input>
 	</ion-item><br>
 
-	<button class="border" ion-button block large (click)="calcular()" color="imccolor">Calcular</button>
+	<button class="border" ion-button block large (click)="calcular()" [disabled]="(isInputing === '') || (isInputingAltura === '')" color="imccolor">Calcular</button>
 
 	<h3 text-center *ngIf="resultado<18.5" >BAIXO PESO</h3>
 	<h5 text-center *ngIf="resultado<18.5" class="baixo">ABAIXO DO PESO</h5>

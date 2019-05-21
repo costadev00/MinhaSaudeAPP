@@ -12,22 +12,27 @@ export class PressaoPage {
 	@ViewChild('nome') nome;
 	resultado: string;
 	name: string;
-	resultado_alto_baixo;
+	resultado_alto_baixo: string;
+	isInputingSistolica = '';
+	isInputingDiastolica = '';
+
 	constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {}
 
 	pressao() {
-		var toast = this.toastCtrl.create({
+		const toast = this.toastCtrl.create({
 			duration: 6000,
 			showCloseButton: true,
 			closeButtonText: 'OK',
 			position: 'bottom'
 		});
-		var pres1 = this.pres1.value;
-		var pres2 = this.pres2.value;
+		let pres1 = this.pres1.value;
+		let pres2 = this.pres2.value;
 
 		this.resultado = '';
 		this.resultado_alto_baixo = '';
 		this.name = this.nome.value;
+		this.isInputingSistolica = this.pres1.value;
+		this.isInputingDiastolica = this.pres2.value;
 
 		if (pres1 < 90 || pres2 < 60) {
 			this.resultado = 'BAIXA';

@@ -15,10 +15,10 @@
 
 	<ion-item>
 		<ion-label stacked floating><h2>Glicemia:</h2></ion-label>
-			<ion-input type="number" #gli></ion-input>
+			<ion-input [(ngModel)]="isInputing" type="number" #gli></ion-input>
 	</ion-item><br>
 
-	<button class="border" ion-button block large (click)="glicemia()" color="vitb12">Calcular</button><br>
+	<button class="border" [disabled]="isInputing == ''" ion-button block large (click)="glicemia()" color="vitb12">Calcular</button><br>
 
 	<!-- Glicemia Normal em jejum -->
 	<h3 *ngIf="jejum1 && gli1>=70 && gli1<=130" text-center>NORMAL</h3>

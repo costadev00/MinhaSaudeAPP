@@ -15,9 +15,9 @@
 	</ion-item>
 	<ion-item>
 		<ion-label stacked floating><h2>Frequência Respiratória (min):</h2> </ion-label>
-			<ion-input type="number" #freqcard></ion-input>
+			<ion-input [(ngModel)]="isInputing" type="number" #freqcard></ion-input>
 	</ion-item><br>
-	<button class="border" ion-button block (click)="calcularfreqresp()" color="freqrespcolor" large>Calcular</button><br>
+	<button class="border" [disabled]="isInputing == ''" ion-button block (click)="calcularfreqresp()" color="freqrespcolor" large>Calcular</button><br>
 	<h3 text-center *ngIf="resultado<12">BRADIPNEIA</h3>
 	
 	<h3 text-center *ngIf="resultado>=12 && resultado<=20">NORMAL</h3>

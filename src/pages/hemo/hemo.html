@@ -16,9 +16,9 @@
 	</ion-item>
 	<ion-item>
 		<ion-label stacked floating><h2>Hemoglobina Glicada:</h2></ion-label>
-			<ion-input type="number" #hemo></ion-input>
+			<ion-input [(ngModel)]="isInputing" type="number" #hemo></ion-input>
 	</ion-item>
-	<button class="border" ion-button block large (click)="hemoglobina()" color="vitb1">Calcular</button><br>
+	<button class="border" [disabled]="isInputing == ''" ion-button block large (click)="hemoglobina()" color="vitb1">Calcular</button><br>
 
 	<!-- Hemoglobina Normal -->
 	<h3 *ngIf="hemo1<5.7" text-center>NORMAL</h3>

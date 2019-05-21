@@ -10,16 +10,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-carbomelhores',
-  templateUrl: 'carbomelhores.html',
+	selector: 'page-carbomelhores',
+	templateUrl: 'carbomelhores.html'
 })
 export class CarbomelhoresPage {
+	constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CarbomelhoresPage');
-  }
-
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad CarbomelhoresPage');
+	}
 }

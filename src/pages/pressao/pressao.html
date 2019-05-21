@@ -12,15 +12,15 @@
 	</ion-item>
 	<ion-item>
 		<ion-label stacked floating><h2>Pressão Sistólica (mm Hg):</h2> </ion-label>
-			<ion-input type="number" #pres1></ion-input>
+			<ion-input [(ngModel)]="isInputingSistolica" type="number" #pres1></ion-input>
 	</ion-item>
 
 	<ion-item>
 		<ion-label stacked floating ><h2>Pressão Diastólica (mm Hg):</h2></ion-label>
-			<ion-input type="number" #pres2></ion-input>
+			<ion-input [(ngModel)]="isInputingDiastolica" type="number" #pres2></ion-input>
 	</ion-item><br>
 
-	<button class="border"ion-button block (click)="pressao()" color="pressaocolor" large>Calcular</button><br>
+	<button class="border"ion-button block (click)="pressao()" [disabled]="(isInputingSistolica === '') || (isInputingDiastolica === '')" color="pressaocolor" large>Calcular</button><br>
 
 	<h3 text-center >{{resultado}}</h3>
 
